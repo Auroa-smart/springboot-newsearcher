@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.mapper.UserMapper">
+    <update id="update">
+        update user
+        <set>
+            <if test="userName!=null">
+                username=#{userName},
+            </if>
+            <if test="passWord!=null">
+                password=#{passWord},
+            </if>
+            <if test="tel!=null">
+                tel=#{tel},
+            </if>
+            <if test="role!=null">
+                role=#{role}
+            </if>
+        </set>
+        <where>
+            userid=#{userId}
+        </where>
+    </update>
+</mapper>

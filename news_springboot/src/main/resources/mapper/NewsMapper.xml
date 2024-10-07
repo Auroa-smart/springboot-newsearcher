@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.mapper.NewsMapper">
+    <update id="update">
+        update news
+        <set>
+            <if test="title != null">
+                title=#{title},
+            </if>
+            <if test="image != null">
+                image=#{image},
+            </if>
+            <if test="url != null">
+                url=#{url},
+            </if>
+            <if test="source !=null">
+                source=#{source}
+            </if>
+            <if test="content !=null">
+                content=#{content}
+            </if>
+            <if test="publishDate !=null">
+                publish_date=#{publishDate}
+            </if>
+
+        </set>
+        <where>
+            news_id=#{newsId}
+        </where>
+    </update>
+
+
+
+
+</mapper>
